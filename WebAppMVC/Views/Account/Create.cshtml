@@ -1,0 +1,119 @@
+﻿@model WebAppMVC.Models.UserModel
+
+@{
+    ViewData["Title"] = Model != null ? "Edit" : "Create";
+}
+
+<h1> @ViewData["Title"]</h1>
+
+<h4>UserModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="@ViewData["Title"]">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contact" class="control-label"></label>
+                <input asp-for="Contact" class="form-control" />
+                <span asp-validation-for="Contact" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Terms" /> @Html.DisplayNameFor(model => model.Terms)
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" asp-for="Gender" value="M">
+                <label class="form-check-label" for="exampleRadios">
+                    Male
+                </label>
+
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" asp-for="Gender" value="F">
+                <label class="form-check-label" for="FemaleRadios">
+                    Female
+                </label>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryId" class="control-label"></label>
+                <select asp-for="CountryId" class="form-control" asp-items="@(new SelectList(ViewBag.CountryList,"CountryId","Country"))">
+                    <option value="">--Select--</option>
+                </select>
+                <span asp-validation-for="CountryId" class="text-danger"></span>
+            </div>
+         
+            <div class="form-group">
+                <label asp-for="CityId" class="control-label"></label>
+                <select asp-for="CityId" class="form-control" asp-items="@(new SelectList(ViewBag.CityList,"CityId","Name"))">
+                    <option value="">--Select--</option>
+                </select>
+                <span asp-validation-for="CityId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+@section Scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+
+        $("#CountryId").change(function () {
+            $.getJSON("GetCities", { CountryId: $("#CountryId").val() }).done(function (data) {
+                var items = "<option value='" + '' + "'>" + "--Select--" + "</option>";
+                $.each(data, function (i, city) {
+                    items += "<option value='" + city.value + "'>" + city.text + "</option>";
+                });
+                $("#CityId").html(items);
+            });
+
+        })
+
+        jQuery.validator.unobtrusive.adapters.add("validatechk", function (options) {
+            if (options.element.tagName.toUpperCase() == "INPUT" && options.element.type.toUpperCase() == "CHECKBOX") {
+                options.rules["required"] = true;
+                if (options.message) {
+                    options.messages["required"] = options.message;
+                }
+            }
+        });
+
+
+
+    </script>
+}
+

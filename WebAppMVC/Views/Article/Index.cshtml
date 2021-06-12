@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h1>What is MVC?</h1>
+<p>MVC stands for .....</p>
+
+<h3>Comments</h3>
+@await Component.InvokeAsync("Comment", new { id = 2 })

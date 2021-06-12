@@ -1,0 +1,15 @@
+C:\Users\comp\source\repos\WebAppMVC\DAL\bin\Debug\net5.0\DAL.deps.json
+C:\Users\comp\source\repos\WebAppMVC\DAL\bin\Debug\net5.0\DAL.runtimeconfig.json
+C:\Users\comp\source\repos\WebAppMVC\DAL\bin\Debug\net5.0\DAL.runtimeconfig.dev.json
+C:\Users\comp\source\repos\WebAppMVC\DAL\bin\Debug\net5.0\DAL.dll
+C:\Users\comp\source\repos\WebAppMVC\DAL\bin\Debug\net5.0\ref\DAL.dll
+C:\Users\comp\source\repos\WebAppMVC\DAL\bin\Debug\net5.0\DAL.pdb
+C:\Users\comp\source\repos\WebAppMVC\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\comp\source\repos\WebAppMVC\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+C:\Users\comp\source\repos\WebAppMVC\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
+C:\Users\comp\source\repos\WebAppMVC\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\comp\source\repos\WebAppMVC\DAL\obj\Debug\net5.0\DAL.dll
+C:\Users\comp\source\repos\WebAppMVC\DAL\obj\Debug\net5.0\ref\DAL.dll
+C:\Users\comp\source\repos\WebAppMVC\DAL\obj\Debug\net5.0\DAL.pdb
+C:\Users\comp\source\repos\WebAppMVC\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
+C:\Users\comp\source\repos\WebAppMVC\DAL\obj\Debug\net5.0\DAL.csprojAssemblyReference.cache
